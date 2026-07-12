@@ -1,0 +1,29 @@
+/* A keresőgombok mérete  és elhelyezkedése nem jó, változtatni kell! */
+
+
+.search-bar {
+    
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.search-button {
+  background-color: #33147c;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  border: 1px solid bisque #ccc;
+  cursor: pointer;
+  
+}
+
+.search-select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-right: 1px;
+}
+
+

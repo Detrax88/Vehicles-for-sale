@@ -1,0 +1,18 @@
+/* A navbar színe és a betű színe nem jó, változtatni kell! */
+
+
+.navbar {
+  background-color: #33147c;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo h1 {
+  margin: 40px 200px;
+  font-size: 34px;
+    font-weight: bold;
+    color: rgb(4, 94, 42);
+}

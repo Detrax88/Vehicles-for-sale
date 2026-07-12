@@ -1,16 +1,17 @@
 import {Link} from 'react-router-dom';
-//import '../css/NavBar.css'; kell majd dizájnos css file!
+import '../css/NavBar.css';
 
 function NavBar() {
     return (
         <>
         <nav className="navbar">
             <div className="navbar-logo">
-                <Link to="/">Vehicle Finder</Link>
+                <h1>Vehicles for sale</h1>
             </div>
             <ul className="navbar-links">
-                <li><Link to="/" className="nav-link" >Home</Link></li>
-                <li><Link to="/favorites" className="nav-link">Favorites</Link></li>
+                <Link to="/" className="nav-link" >Home</Link>
+                <p></p>
+                <Link to="/favorites" className="nav-link">Favorites</Link>
             </ul>
         </nav>
         </>
