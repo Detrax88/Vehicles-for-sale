@@ -1,7 +1,9 @@
 # Vehicles for sale
 
-Feladat: api.js-t megírni. Honnan szedje az adatokat.
+Feladat: Az api.js-t eléri az adatokat. Leglaábbis az autókat. Fotók jelenleg nincsenek. Nem tudom, az a frontendesnek kell e tárolni valahol, vgay mint az
+aatbázisnak, a backendesnek kell e feltöltenie.
 
-Keresőfunkció félig van kész. Jelenleg rá is keres, ha valamit elkezdünk beírni, nem kell rányomni a "go for it" gombra.
+A keresőfunkció hiányos. Készítés alatt.
 SearchBar.css, NavBar.css, VehicleDetails.css hiányos
 Csillagos értékelés nincs kész
+Favorites oldal sem működik még. 
