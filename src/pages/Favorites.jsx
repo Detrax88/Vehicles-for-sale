@@ -1,26 +1,13 @@
-// import "../css/Favorites.css"; kell majd dizájnos css file!
+// import "../css/Favorites.css";
 
-function Favorites({ favorites, toggleFavorite }) {
-  return (
-    <div className="favorites-container">
-      <h1>Favorites</h1>
-      {favorites.length > 0 ? (
-        favorites.map((vehicle) => (
-          <div key={vehicle.id} className="favorite-item">
-            <h2>{vehicle.name}</h2>
-            <p>Model: {vehicle.model}</p>
-            <p>Year: {vehicle.year}</p>
-            <p>Price: ${vehicle.price.toFixed(2)}</p>
-            <button className="favorite-btn" onClick={() => toggleFavorite(vehicle)}>
-              Remove from favorites
-            </button>
-          </div>
-        ))
-      ) : (
-        <p>You don't have any favorites yet.</p>
-      )}
-    </div>
-  );
+function Favorites() {
+    return (
+        <>
+            <h1>Favorites</h1>
+            <p>Your favorite vehicles will appear here.</p>
+            </>
+        
+    )
 }
 
 export default Favorites;

@@ -1,26 +1,25 @@
-// import '../css/VehicleDetails.css'; kell majd dizájnos css file!
+function VehicleDetails({vehicle}) {
 
-function VehicleDetails({ vehicle, isFavorite, toggleFavorite }) {
-  return (
-    <>
-      <div className="vehicle-details">
-        <h2>{vehicle.name}</h2>
-        <p>Model: {vehicle.model}</p>
-        <p>Year: {vehicle.year}</p>
-        <p>Price: ${vehicle.price.toFixed(2)}</p>
-        <p>Mileage: {vehicle.Mileage} miles</p>
+    function onFavoriteClick() {
+        alert("Favorite clicked")
+    }
 
-        <button
-          className={`favorite-btn ${isFavorite ? 'favorite-active' : ''}`}
-          onClick={() => toggleFavorite(vehicle)}
-        >
-          {isFavorite ? '♥ Remove' : '♡ Add'}
-        </button>
-      </div>
+    return (
+        <>
+        <div className="vehicle-details">
+            <div className="vehicle-image">
+                <img src={vehicle.image} alt={`${vehicle.make} ${vehicle.model}`} />
+            </div>
 
-      <div className="vehicle-info" />
-    </>
-  );
-}
-
-export default VehicleDetails;
+            <h2>{vehicle.make} {vehicle.model}</h2>
+            <p>Year: {vehicle.year}</p>
+            <p>Price: ${vehicle.price}</p>
+            <button className="favorite-button" onClick={onFavoriteClick}>
+                Add to Favorites
+            </button>
+        </div>
+        </>
+    )
+    }
+    
+    export default VehicleDetails;
