@@ -1,41 +1,42 @@
 import {useEffect, useState} from 'react';
 import VehicleDetails from '../components/VehicleDetails';
 import  {getVehicles} from '../services/api';
+import SearchBar from '../components/SearchBar';
 //import "..css/Home.css";
 
 function Home() {
-    const [vehicleList, setVehicleList] = useState([]);
     const [searchedVehicles, setSearchedVehicles] = useState("");
-    const [filteredList, setFilteredList] = useState([]);
-
+    const [vehicles, setVehicles] = useState([]);
+    
+    
+   
     useEffect(() => {
         async function loadVehicles() {
-            const vehicles = await getVehicles();
-            setVehicleList(vehicles);
-            setFilteredList(vehicles);
+            const vehicleList = await getVehicles();
+            setVehicles(vehicleList);
         }
         loadVehicles();
     }, []);
 
-    const handleSearch = (e) => {
-        e.preventDefault();
-        alert(searchedVehicles);
-        setSearchedVehicles("");
-    }
+    const searchTerm = searchedVehicles.trim().toLowerCase();
+    const filteredList = vehicles.filter((vehicle) =>
+        [vehicle.make, vehicle.model, vehicle.year]
+            .some((value) => String(value ?? '').toLowerCase().includes(searchTerm))
+    );
+
     return (
         <>
-         <div className="home">
-                <form className="search-form"  onSubmit={handleSearch}>
-                    <input type="text" className="search-input" value={searchedVehicles} onChange={(e) => setSearchedVehicles(e.target.value)} />
-                    <button type="submit" className="search-button">Search</button>
-                </form>
-                </div>
-                <div className="vehicle-list">
-                    {vehicleList.map((vehicle) => (
-                        <VehicleDetails key={vehicle.id} vehicle={vehicle} />
-                    ))}
-                </div>
-
+        <SearchBar sc={setSearchedVehicles} />
+        <div className="home"> 
+        <div className="vehicle-list">
+            {filteredList.map((vehicle) => (
+                <VehicleDetails key={vehicle.id} vehicle={vehicle} />
+            ))}
+            {searchTerm && filteredList.length === 0 && (
+                <p>No vehicles found for "{searchedVehicles}"</p>
+            )}
+        </div>
+            </div>
         
         
         </>

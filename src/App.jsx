@@ -11,7 +11,7 @@ function App() {
  
 
   return (
-    <>
+    <>    
     <div className="NavBarDiv">
       <NavBar />
       </div>
@@ -22,6 +22,7 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
       </main>
+      
        </>
   )
 }
